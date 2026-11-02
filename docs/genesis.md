@@ -1,5 +1,7 @@
 # Genesis: per-user keys and the first READY
 
+> 日本語版: [genesis.ja.md](genesis.ja.md)
+
 The system's trust anchor is a per-installation ECDSA keypair. There
 is no shared "release" key: an APK built with somebody else's pinned
 key can never complete a proof on your device, by construction.

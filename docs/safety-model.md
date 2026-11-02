@@ -1,5 +1,7 @@
 # Safety model
 
+> 日本語版: [safety-model.ja.md](safety-model.ja.md)
+
 The design rule is **fail closed, and never make the device worse
 than stock**. Every component was built and acceptance-tested under
 that rule.

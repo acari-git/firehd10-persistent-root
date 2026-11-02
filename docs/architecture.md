@@ -1,5 +1,7 @@
 # Architecture
 
+> 日本語版: [architecture.ja.md](architecture.ja.md)
+
 The system turns upstream SnuSnuRoot's *temporary* root into
 *unattended persistent* root on one exact firmware build, without
 writing any partition. Every boot, the same in-memory chain runs:

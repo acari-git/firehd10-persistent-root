@@ -1,5 +1,7 @@
 # Failure modes
 
+> 日本語版: [failure-modes.ja.md](failure-modes.ja.md)
+
 Everything below was observed on the real device and is part of why
 the system is shaped the way it is.
 

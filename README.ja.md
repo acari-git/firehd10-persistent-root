@@ -92,11 +92,11 @@ voidnullvalue 氏の [SnuSnuRoot](https://github.com/voidnullvalue/SnuSnuRoot)
   検証された通常完了のみです。genesis とロックアウト復旧による
   完了は武装しません。
 
-詳細： [`docs/architecture.md`](docs/architecture.md) ·
-安全性： [`docs/safety-model.md`](docs/safety-model.md) ·
-初回実行／鍵の儀式： [`docs/genesis.md`](docs/genesis.md) ·
-証跡： [`docs/acceptance.md`](docs/acceptance.md) ·
-何がどう失敗するか： [`docs/failure-modes.md`](docs/failure-modes.md)
+詳細： [`docs/architecture.ja.md`](docs/architecture.ja.md) ·
+安全性： [`docs/safety-model.ja.md`](docs/safety-model.ja.md) ·
+初回実行／鍵の儀式： [`docs/genesis.ja.md`](docs/genesis.ja.md) ·
+証跡： [`docs/acceptance.ja.md`](docs/acceptance.ja.md) ·
+何がどう失敗するか： [`docs/failure-modes.ja.md`](docs/failure-modes.ja.md)
 
 ## 実測の信頼性（開発端末、2026年10–11月）
 
@@ -142,7 +142,7 @@ Gradle は使いません。ビルドは POSIX `sh` と、Android SDK
    チェックインされたピン留め鍵を使って。先に自分の公開鍵を
    ピン留めするには、`python3 app/gen_pinned_key.py <your-public.der> "<label>"
    app/src/io/github/voidnullvalue/snusnuroot/persistence/Stage4PinnedProofKey.java`
-   を実行してから `app/build.sh` を実行します（`docs/genesis.md`
+   を実行してから `app/build.sh` を実行します（`docs/genesis.ja.md`
    を参照）。`app/build-v2.sh` はこの2ステップを連鎖させる
    開発ツリー用ラッパーで、開発レイアウト（隣接する
    `stage4-persistent/` ディレクトリ）を前提としており、来歴の

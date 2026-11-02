@@ -1,5 +1,7 @@
 # Acceptance evidence
 
+> 日本語版: [acceptance.ja.md](acceptance.ja.md)
+
 Measured on the development device (Fire HD 10, trona/KFTRWI,
 Fire OS 7.3.3.1, fingerprint
 `Amazon/trona/trona:9/PS7331.4463N/0031575863040`) in November 2026.
