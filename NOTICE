@@ -1,0 +1,28 @@
+firehd10-persistent-root — unattended persistent root for the Amazon
+Fire HD 10 (trona) on Fire OS 7.3.3.1 / PS7331.4463N.
+
+Copyright (C) 2026 Yoshinori (GitHub: acari-git) for the persistence
+layer, hardening, and documentation original to this repository.
+
+This repository is a derivative work based on:
+
+  SnuSnuRoot by voidnullvalue
+  https://github.com/voidnullvalue/SnuSnuRoot
+  Pinned at commit d552f666ae05ffee1b9d4e4d6f8aa9da4bca0fb9
+  Licensed under the GNU General Public License v3.0.
+
+  The temporary-root chain (Stage4), the original persistence actor
+  this layer forks, and several device scripts in device/ originate
+  upstream. See UPSTREAM.md for the per-file provenance record.
+
+Magisk (topjohnwu/Magisk, GNU GPL v3.0) is a runtime prerequisite
+supplied by the upstream project. Magisk binaries are NOT distributed
+in this repository; obtain them via upstream, whose README carries the
+corresponding-source pointer for the Magisk revision it ships.
+
+Code in this repository is licensed under the GNU General Public
+License v3.0 (see LICENSE). Documentation under docs/ is licensed
+under CC BY 4.0 (see docs/LICENSE-CC-BY-4.0.md).
+
+This project is not affiliated with Amazon, voidnullvalue, or
+topjohnwu. "Fire HD" and "Fire OS" are trademarks of Amazon.

@@ -1,0 +1,59 @@
+{
+ "date": "2026-11-01",
+ "purpose": "Production device proof signer for the journal genesis design (design doc section 2), plus its host cross-tests. Host-only work: the Fire HD was not contacted (no adb, no installs, no settings).",
+ "design_doc": "FIREHD10_JOURNAL_BOOTSTRAP_AND_PROOF_CUSTODY_DESIGN_20261101.md (project root)",
+ "genesis_runbook": "FIREHD10_GENESIS_SESSION_RUNBOOK_20261101.md (project root)",
+ "device_ready": false,
+ "deployment_approved": false,
+ "device_modified": false,
+ "firmware": "PS7331.4463N",
+ "model": "KFTRWI",
+ "execution_form": "Single dependency-free Java class compiled to a dex, run on-device via /system/bin/app_process from the root (magisk) shell through snusnu-proof-signer.sh; the same source runs on the host JVM for cross-tests. JCA ECDSA P-256 / SHA256withECDSA, identical stack to the app-side verifiers.",
+ "artifacts": {
+  "src/Stage4DeviceSigner.java": {
+   "sha256": "2fe65edd61eead94d601e86865e0f85560479fdc11dc41ee742168afa475e6a4",
+   "bytes": 29457
+  },
+  "build/stage4-device-signer.dex": {
+   "sha256": "8c428355fe3ba6b2b8685293f6bdbec845f7f629301784b70fb9734a61c1e0c4",
+   "bytes": 18808
+  },
+  "build/stage4-device-signer-host.jar": {
+   "sha256": "feeffdf4437f725ec33a83a1873d734bd60d49d0dc2be6f9901e70f3d314add0",
+   "bytes": 10945
+  },
+  "snusnu-proof-signer.sh": {
+   "sha256": "019d56fe868190895f1c63728daf8fdc8e90b7652c014fc42760a52ca695a2d0",
+   "bytes": 1008
+  },
+  "build-signer.sh": {
+   "sha256": "414387415fce74a7fc9a9ce6e1caa18ecc9bb3b0a314e5a2a910758fc3a6e0bc",
+   "bytes": 1545
+  },
+  "SIGNER-IMPLEMENTATION-NOTES-20261101.md": {
+   "sha256": "4074bd0bc20a73a6892192819a123631ab9513a3f34458e7d56fdf444a5cd05c",
+   "bytes": 10316
+  },
+  "test module (project root)": {
+   "path": "test_execute_firehd10_device_signer_host_20261101.py",
+   "sha256": "7b4dfa4c93934db35ebc1a1c4e86a2aec9ee4968c21acb9c7c8ef61e523269b7",
+   "bytes": 26160
+  },
+  "genesis runbook (project root)": {
+   "path": "FIREHD10_GENESIS_SESSION_RUNBOOK_20261101.md",
+   "sha256": "99e9c90e66a836a655509a9d152ba1a4eab360c821dc4800b34e9436fac26765",
+   "bytes": 16521
+  }
+ },
+ "host_tests_2026-11-01": {
+  "new_module": "test_execute_firehd10_device_signer_host_20261101: 9 unittest methods, all PASS (keygen overwrite refusal + pin roundtrip, report mode pass/fail, pinned key accepts production signer and rejects foreign key, genesis end-to-end to READY:<boot>:191, genesis token gates absent/wrong-boot/consumed, routine completion end-to-end via proof_request with tampered-drop denial and replay denial, cross-domain rejection both directions at verifier and journal level, all signer gate denials incl. su timeout, fixup plan + drop shape)",
+  "baseline_regression": "60/60 OK (the 59 baseline tests of the v1 manifest, 9 modules, + the v2 bootstrap module), python3.14 -m unittest",
+  "runner": "python3.14 -m unittest (Mac)"
+ },
+ "label_fixup": "Signer copies the SELinux label of a journal-family file in the app DPS files dir (genesis challenge state first) onto the delivered drop via ls -Z + chcon, after chown u0_a55; fixup failure deletes the drop and fails the run. Host-tested in plan mode (FIXUP_PLAN lines); on-device equality is a mandatory genesis-session check (runbook steps 18-20).",
+ "open_session_items": [
+  "app_process dex execution context under the magisk domain is unverified until the runbook step 7 report-only probe",
+  "why the app did not run on the 2026-11-01 boot is unexplained; runbook mitigations are BootstrapActivity stopped-state clearing + pm install -r re-trigger, then stop",
+  "chcon label copy relies on device toybox chcon / ls -Z output; verified in-session (runbook step 18)"
+ ]
+}

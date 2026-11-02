@@ -1,0 +1,15 @@
+# Build outputs
+*.apk
+*.idsig
+*.jar
+*.dex
+*.class
+app/build/
+signer/build/
+
+# Vendored upstream checkout (fetch at the pinned commit; see UPSTREAM.md)
+refs/
+
+# Python test caches
+__pycache__/
+*.pyc
