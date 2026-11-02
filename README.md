@@ -4,7 +4,7 @@
 Fire OS 7.3.3.1 — a journal-gated, fail-closed persistence layer built
 on top of SnuSnuRoot.**
 
-> 日本語の要約は末尾にあります。
+> 日本語版（全文）: [README.ja.md](README.ja.md)
 
 ## What this is
 
@@ -172,29 +172,3 @@ documented procedures, could leave it unbootable. The author is not
 affiliated with Amazon, voidnullvalue, or the Magisk project.
 "Fire HD" and "Fire OS" are trademarks of Amazon.
 
----
-
-## 日本語要約
-
-Amazon Fire HD 10（trona）/ Fire OS 7.3.3.1（ビルド PS7331.4463N）
-専用の、**完全無人で永続化する root システム**です。土台の一時
-root は voidnullvalue 氏の SnuSnuRoot（GPL-3.0）で、本リポジトリは
-その上に構築した永続化・堅牢化レイヤーです。
-
-- 起動のたびに自動で root を再取得し、Magisk を配置、SELinux
-  Enforcing を復帰させ、端末内 ECDSA 署名による「証明」でサイクル
-  を完了し、次回ブートを武装します（約90秒、操作不要）。
-- 武装はジャーナル（EMPTY / INFLIGHT / READY）が一元管理し、失敗
-  したブートは fail-closed で武装解除されます（中途半端な状態には
-  なりません）。ただしその場合、復旧には root セッションでの
-  手順（ロックアウト復旧）が必要です。
-- パーティションへの書き込みは一切しません。ブートローダーは
-  ロックされたまま、Verified Boot も green のままです。
-- 実測: ドライバ再取得 9/19（約47%）、アプリ側無人サイクル 9/10、
-  正式受入シーケンス 5/5（通常再起動×3＋冷起動×2、すべて無人）。
-- 対応は上記の **1ビルドのみ** で検証済みです。他ビルド（上流の
-  公称対象 4460N を含む）は未検証であり、ドライバの事前チェック
-  が拒否します。
-- コードは GPL-3.0、ドキュメントは CC BY 4.0。リリース APK は
-  配布しません（署名が上流の公開デバッグ鍵であり、真正性の錨は
-  端末内証明鍵のため、ソースから読んでビルドする前提です）。
