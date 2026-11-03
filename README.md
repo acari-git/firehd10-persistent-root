@@ -36,7 +36,8 @@ app: Magisk shown as installed means the cycle completed and root
 is live. If Magisk shows as not installed, that boot missed — the
 system has disarmed itself (fail-closed) and the device is simply
 stock; rebooting again will not retry, and re-arming requires the
-recovery flow (see `docs/failure-modes.md`).
+recovery flow (procedure in `docs/genesis.md`;
+the miss itself is described in `docs/failure-modes.md`).
 
 ## What this is not
 

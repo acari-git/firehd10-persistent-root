@@ -36,7 +36,8 @@ voidnullvalue 氏の [SnuSnuRoot](https://github.com/voidnullvalue/SnuSnuRoot)
 生きています。未インストールと表示される場合、そのブートは
 外れています — システムはフェイルクローズで武装解除され、
 端末は素の状態です。再起動しても再挑戦はせず、再武装には
-復旧フローが必要です（`docs/failure-modes.ja.md` を参照）。
+復旧フローが必要です（手順は `docs/genesis.ja.md`、
+失敗の仕組みは `docs/failure-modes.ja.md` を参照）。
 
 ## これは何でないか
 
