@@ -26,6 +26,18 @@ This repository is the layer developed on top of it that makes root
   (3 normal reboots + 2 power-off cold boots, all unattended),
   after a mid-sequence failure, a full recovery, and re-tests.
 
+### Checking whether a boot worked
+
+Wait about 90 seconds after boot before checking. The cycle runs
+unattended from boot and takes about that long end to end, so
+checking earlier can catch it mid-flight and make a healthy boot
+look like a failure. Once ~90 seconds have passed, open the Magisk
+app: Magisk shown as installed means the cycle completed and root
+is live. If Magisk shows as not installed, that boot missed — the
+system has disarmed itself (fail-closed) and the device is simply
+stock; rebooting again will not retry, and re-arming requires the
+recovery flow (see `docs/failure-modes.md`).
+
 ## What this is not
 
 - **Not a new exploit.** The temporary-root chain is upstream's.
